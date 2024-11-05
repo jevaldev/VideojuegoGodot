@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5g3ujpptwsxn"]
+
+[ext_resource type="Texture2D" uid="uid://degtj5r267mje" path="res://assets/WorldDecoration/Terrain/Ground/Shadows.png" id="1_k8qjv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_702y2"]
+texture = ExtResource("1_k8qjv")
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+3:3/0 = 0
+3:8/0 = 0
+8:3/0 = 0
+8:8/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2bvu4"]
+sources/0 = SubResource("TileSetAtlasSource_702y2")
+
+[node name="Shadows" type="TileMapLayer"]
+tile_set = SubResource("TileSet_2bvu4")

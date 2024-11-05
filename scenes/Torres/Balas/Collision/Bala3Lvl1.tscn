@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://06gycwbb46d8"]
+
+[ext_resource type="PackedScene" uid="uid://nsv7xtsrtwnm" path="res://scenes/Torres/Balas/bala_3_lvl_1.tscn" id="1_0j35e"]
+[ext_resource type="Script" path="res://scripts/Balas.gd" id="1_rjxqj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kfqms"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v3odh"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_xkq4b"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ps24"]
+_data = {
+"new_animation": SubResource("Animation_xkq4b")
+}
+
+[node name="Bala3LVL1" type="CharacterBody2D"]
+top_level = true
+script = ExtResource("1_rjxqj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kfqms")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_v3odh")
+debug_color = Color(0.4728, 0.584354, 0.229473, 0.42)
+
+[node name="Bala3Lvl1" parent="." instance=ExtResource("1_0j35e")]
+rotation = 5.16638e-05
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8ps24")
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

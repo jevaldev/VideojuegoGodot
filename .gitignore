@@ -1,0 +1,20 @@
+# Godot 4 specific ignores
+.import/
+.godot/
+.mono/
+*.import
+*.tmp
+*.log
+/android/
+/export_presets.cfg
+
+# Ignore exported builds
+/builds/
+/bin/
+/export/
+
+# Godot Editor Configuration
+.editor_settings-*
+
+# Backup files (por si acaso)
+*.bak

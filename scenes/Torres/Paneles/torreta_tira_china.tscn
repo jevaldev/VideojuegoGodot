@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://drvm4l47myjqf"]
+
+[ext_resource type="Texture2D" uid="uid://dcokpw5njbysb" path="res://assets/Towers bases/Tower 03 Lvl1.png" id="1_kvtdp"]
+[ext_resource type="Script" path="res://scenes/Torres/Paneles/TorretasPaneles.gd" id="1_r5p8p"]
+[ext_resource type="Texture2D" uid="uid://bvgtcsbxtdyv7" path="res://assets/GUI/Others/Button_Blue.png" id="2_w268s"]
+[ext_resource type="FontFile" uid="uid://c7d0sueupq4is" path="res://assets/prstart.ttf" id="4_vlmp4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5u3gs"]
+bg_color = Color(0, 0, 0, 0.588235)
+
+[node name="TorretaTiraChina" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 100)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_r5p8p")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -8.0
+offset_right = 112.0
+offset_bottom = 120.0
+texture = ExtResource("2_w268s")
+
+[node name="TorretaSprite" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = -56.0
+offset_right = 84.0
+offset_bottom = 72.0
+texture = ExtResource("1_kvtdp")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -14.0
+offset_right = 30.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_fonts/font = ExtResource("4_vlmp4")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_5u3gs")
+text = "900"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

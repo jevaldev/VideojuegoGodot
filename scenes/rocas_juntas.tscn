@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://d03hxgi7t7tq6"]
+
+[ext_resource type="Texture2D" uid="uid://ytd8yvqvqyf5" path="res://assets/WorldDecoration/Deco/05.png" id="1_586i2"]
+[ext_resource type="Texture2D" uid="uid://dc7q2kmi4kjol" path="res://assets/WorldDecoration/Deco/06.png" id="2_kn6sm"]
+[ext_resource type="Texture2D" uid="uid://dxxeiaq2ru4t2" path="res://assets/WorldDecoration/Deco/04.png" id="3_myqod"]
+
+[node name="RocasJuntas" type="Node2D"]
+z_index = -1
+
+[node name="07" type="Sprite2D" parent="."]
+position = Vector2(16, 96)
+texture = ExtResource("1_586i2")
+
+[node name="06" type="Sprite2D" parent="."]
+position = Vector2(-8, 56)
+texture = ExtResource("2_kn6sm")
+
+[node name="08" type="Sprite2D" parent="."]
+position = Vector2(16, 64)
+texture = ExtResource("2_kn6sm")
+
+[node name="09" type="Sprite2D" parent="."]
+position = Vector2(-88, -24)
+texture = ExtResource("2_kn6sm")
+
+[node name="10" type="Sprite2D" parent="."]
+position = Vector2(-80, -48)
+texture = ExtResource("2_kn6sm")
+
+[node name="11" type="Sprite2D" parent="."]
+position = Vector2(-72, -8)
+texture = ExtResource("2_kn6sm")
+
+[node name="05" type="Sprite2D" parent="."]
+position = Vector2(-104, -40)
+texture = ExtResource("1_586i2")
+
+[node name="12" type="Sprite2D" parent="."]
+position = Vector2(-88, 0)
+texture = ExtResource("1_586i2")
+
+[node name="04" type="Sprite2D" parent="."]
+position = Vector2(-104, -16)
+texture = ExtResource("3_myqod")
+
+[node name="13" type="Sprite2D" parent="."]
+position = Vector2(-80, -24)
+texture = ExtResource("3_myqod")
+
+[node name="14" type="Sprite2D" parent="."]
+position = Vector2(-16, 104)
+texture = ExtResource("1_586i2")
+
+[node name="15" type="Sprite2D" parent="."]
+position = Vector2(16, 128)
+texture = ExtResource("3_myqod")
+
+[node name="16" type="Sprite2D" parent="."]
+position = Vector2(48, 104)
+texture = ExtResource("3_myqod")

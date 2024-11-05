@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://becscy71l3e1o"]
+
+[ext_resource type="Texture2D" uid="uid://cffc066sweoyw" path="res://assets/Towers Weapons/Tower 03/Spritesheets/Tower 03 - Level 01 - Weapon.png" id="1_xinen"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0e3i"]
+atlas = ExtResource("1_xinen")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jj6j"]
+atlas = ExtResource("1_xinen")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsed2"]
+atlas = ExtResource("1_xinen")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_it5u5"]
+atlas = ExtResource("1_xinen")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6gdm"]
+atlas = ExtResource("1_xinen")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm4vd"]
+atlas = ExtResource("1_xinen")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdtdn"]
+atlas = ExtResource("1_xinen")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdh0h"]
+atlas = ExtResource("1_xinen")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hgkyy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0e3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jj6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsed2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_it5u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6gdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bm4vd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdtdn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdh0h")
+}],
+"loop": true,
+"name": &"disparar",
+"speed": 6.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_hgkyy")
+animation = &"disparar"
+frame_progress = 0.663381

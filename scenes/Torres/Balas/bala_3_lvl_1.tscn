@@ -1,0 +1,106 @@
+[gd_scene load_steps=16 format=3 uid="uid://nsv7xtsrtwnm"]
+
+[ext_resource type="Texture2D" uid="uid://bu1yypgnm7lf7" path="res://assets/Towers Weapons/Tower 03/Spritesheets/Tower 03 - Level 01 - Projectile.png" id="1_n6v4b"]
+[ext_resource type="Texture2D" uid="uid://darkyvjky27ap" path="res://assets/Towers Weapons/Tower 03/Spritesheets/Tower 03 - Level 01 - Projectile - Impact.png" id="2_bpavp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4664b"]
+atlas = ExtResource("1_n6v4b")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfomv"]
+atlas = ExtResource("1_n6v4b")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1qc1"]
+atlas = ExtResource("1_n6v4b")
+region = Rect2(20, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_663xb"]
+atlas = ExtResource("1_n6v4b")
+region = Rect2(30, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7iw5y"]
+atlas = ExtResource("1_n6v4b")
+region = Rect2(40, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r72w7"]
+atlas = ExtResource("1_n6v4b")
+region = Rect2(50, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fecpq"]
+atlas = ExtResource("2_bpavp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_id8k0"]
+atlas = ExtResource("2_bpavp")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bykqb"]
+atlas = ExtResource("2_bpavp")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1vbr"]
+atlas = ExtResource("2_bpavp")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1omgw"]
+atlas = ExtResource("2_bpavp")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so6r6"]
+atlas = ExtResource("2_bpavp")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t33cg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4664b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfomv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1qc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_663xb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iw5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r72w7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fecpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_id8k0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bykqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1vbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1omgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so6r6")
+}],
+"loop": true,
+"name": &"explosionBala",
+"speed": 5.0
+}]
+
+[node name="Bala3Lvl1" type="AnimatedSprite2D"]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_t33cg")
+autoplay = "default"

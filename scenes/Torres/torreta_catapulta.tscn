@@ -1,0 +1,205 @@
+[gd_scene load_steps=26 format=3 uid="uid://dq6f650icuy10"]
+
+[ext_resource type="Texture2D" uid="uid://1kuql5fn1xga" path="res://assets/Towers bases/Tower 04 Lvl1.png" id="1_e8nh2"]
+[ext_resource type="Script" path="res://scripts/torreta.gd" id="1_x2lav"]
+[ext_resource type="Texture2D" uid="uid://bn6o6dev8lkl1" path="res://assets/Towers Weapons/Tower 04/PNGs/Tower 04 - Level 01 - Weapon.png" id="2_4vlqj"]
+[ext_resource type="PackedScene" uid="uid://cqn5ntwm7y4a8" path="res://scenes/Torres/Balas/Collision/bala_4_lvl_1.tscn" id="2_y776b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07pg4"]
+atlas = ExtResource("2_4vlqj")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkut4"]
+atlas = ExtResource("2_4vlqj")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6k2r"]
+atlas = ExtResource("2_4vlqj")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh40d"]
+atlas = ExtResource("2_4vlqj")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_embyd"]
+atlas = ExtResource("2_4vlqj")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brkc0"]
+atlas = ExtResource("2_4vlqj")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7l4h"]
+atlas = ExtResource("2_4vlqj")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0dl0"]
+atlas = ExtResource("2_4vlqj")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsfy7"]
+atlas = ExtResource("2_4vlqj")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snuou"]
+atlas = ExtResource("2_4vlqj")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lg86l"]
+atlas = ExtResource("2_4vlqj")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ea3sx"]
+atlas = ExtResource("2_4vlqj")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4nx6"]
+atlas = ExtResource("2_4vlqj")
+region = Rect2(1536, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8s7o"]
+atlas = ExtResource("2_4vlqj")
+region = Rect2(1664, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu726"]
+atlas = ExtResource("2_4vlqj")
+region = Rect2(1792, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3vdr"]
+atlas = ExtResource("2_4vlqj")
+region = Rect2(1920, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epq6q"]
+atlas = ExtResource("2_4vlqj")
+region = Rect2(2048, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6up1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07pg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkut4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6k2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gh40d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_embyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brkc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7l4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0dl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsfy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snuou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lg86l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ea3sx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4nx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8s7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu726")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3vdr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epq6q")
+}],
+"loop": true,
+"name": &"disparar",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lyc0"]
+size = Vector2(48, 80)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8i7na"]
+radius = 250.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh7ru"]
+bg_color = Color(0.95323, 0.237678, 0.248942, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 450
+corner_radius_top_right = 450
+corner_radius_bottom_right = 450
+corner_radius_bottom_left = 450
+corner_detail = 20
+
+[node name="TorretaCatapulta" type="StaticBody2D" node_paths=PackedStringArray("armaAnimada", "aim")]
+position = Vector2(0, -55)
+script = ExtResource("1_x2lav")
+bulletScene = ExtResource("2_y776b")
+armaAnimada = NodePath("Sprite2D/AnimatedSprite2D")
+aim = NodePath("Sprite2D/AnimatedSprite2D/Marker2D")
+numeroFrame = 5
+lastFrame = 16
+bulletDMG = 17
+fps_increment = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_e8nh2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_6up1j")
+animation = &"disparar"
+frame_progress = 0.221321
+
+[node name="Marker2D" type="Marker2D" parent="Sprite2D/AnimatedSprite2D"]
+position = Vector2(0, -32)
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_6lyc0")
+
+[node name="Tower" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower"]
+shape = SubResource("CircleShape2D_8i7na")
+debug_color = Color(0.67162, 0.499917, 0.262746, 0.42)
+
+[node name="BulletContainer" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.0784314)
+z_index = -5
+offset_left = -248.0
+offset_top = -253.0
+offset_right = 248.0
+offset_bottom = 255.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eh7ru")
+
+[connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
+[connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

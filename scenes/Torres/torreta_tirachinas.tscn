@@ -1,0 +1,166 @@
+[gd_scene load_steps=18 format=3 uid="uid://bd4thecmo2fa8"]
+
+[ext_resource type="Script" path="res://scripts/torreta.gd" id="1_opqln"]
+[ext_resource type="PackedScene" uid="uid://06gycwbb46d8" path="res://scenes/Torres/Balas/Collision/Bala3Lvl1.tscn" id="2_hnh6a"]
+[ext_resource type="Texture2D" uid="uid://dcokpw5njbysb" path="res://assets/Towers bases/Tower 03 Lvl1.png" id="2_ntg5w"]
+[ext_resource type="Texture2D" uid="uid://cffc066sweoyw" path="res://assets/Towers Weapons/Tower 03/Spritesheets/Tower 03 - Level 01 - Weapon.png" id="4_qhkrt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3llu"]
+atlas = ExtResource("4_qhkrt")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybnf2"]
+atlas = ExtResource("4_qhkrt")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsf2c"]
+atlas = ExtResource("4_qhkrt")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctplv"]
+atlas = ExtResource("4_qhkrt")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tet0k"]
+atlas = ExtResource("4_qhkrt")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0864b"]
+atlas = ExtResource("4_qhkrt")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lt00r"]
+atlas = ExtResource("4_qhkrt")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12mei"]
+atlas = ExtResource("4_qhkrt")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_njpx1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3llu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybnf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsf2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctplv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tet0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0864b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lt00r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12mei")
+}],
+"loop": true,
+"name": &"disparar",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aga14"]
+size = Vector2(56, 101)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yqcvc"]
+radius = 300.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7tbdb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 450
+corner_radius_top_right = 450
+corner_radius_bottom_right = 450
+corner_radius_bottom_left = 405
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1a441"]
+bg_color = Color(0.95323, 0.237678, 0.248942, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 450
+corner_radius_top_right = 450
+corner_radius_bottom_right = 450
+corner_radius_bottom_left = 450
+corner_detail = 20
+
+[node name="TorretaTiraChinas" type="StaticBody2D" node_paths=PackedStringArray("armaAnimada", "aim")]
+z_index = 10
+position = Vector2(0, -55)
+collision_mask = 4
+script = ExtResource("1_opqln")
+bulletScene = ExtResource("2_hnh6a")
+armaAnimada = NodePath("Sprite2D/AnimatedSprite2D")
+aim = NodePath("Sprite2D/AnimatedSprite2D/Marker2D")
+numeroFrame = 5
+lastFrame = 7
+bulletDMG = 9
+fps_increment = 0.75
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_ntg5w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+sprite_frames = SubResource("SpriteFrames_njpx1")
+animation = &"disparar"
+autoplay = "disparar"
+frame = 7
+frame_progress = 1.0
+
+[node name="Marker2D" type="Marker2D" parent="Sprite2D/AnimatedSprite2D"]
+position = Vector2(0, -32.6667)
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_aga14")
+
+[node name="Tower" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower"]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_yqcvc")
+debug_color = Color(0.605378, 0.508333, 0.51296, 0.42)
+
+[node name="BulletContainer" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.8
+autostart = true
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = -296.0
+offset_top = -305.0
+offset_right = 296.0
+offset_bottom = 287.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7tbdb")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.0784314)
+z_index = -5
+offset_left = -294.0
+offset_top = -300.0
+offset_right = 290.0
+offset_bottom = 284.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1a441")
+
+[connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
+[connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

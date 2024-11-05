@@ -1,0 +1,145 @@
+[gd_scene load_steps=12 format=3 uid="uid://dx34u4xstguwl"]
+
+[ext_resource type="Texture2D" uid="uid://dfiar33xj0dmb" path="res://assets/GUI/Banners/Banner_Vertical.png" id="2_txens"]
+[ext_resource type="PackedScene" uid="uid://drvm4l47myjqf" path="res://scenes/Torres/Paneles/torreta_tira_china.tscn" id="3_fjeav"]
+[ext_resource type="PackedScene" uid="uid://bd4thecmo2fa8" path="res://scenes/Torres/torreta_tirachinas.tscn" id="4_b76t8"]
+[ext_resource type="Texture2D" uid="uid://dcokpw5njbysb" path="res://assets/Towers bases/Tower 03 Lvl1.png" id="5_l1sv3"]
+[ext_resource type="Texture2D" uid="uid://bak8r4y7j8dge" path="res://assets/GUI/DefaultDisplay.png" id="6_n01qj"]
+[ext_resource type="FontFile" uid="uid://c7d0sueupq4is" path="res://assets/prstart.ttf" id="6_qfw2q"]
+[ext_resource type="PackedScene" uid="uid://vlswixrwdr8u" path="res://scenes/Torres/Paneles/mejoras.tscn" id="7_7noqp"]
+[ext_resource type="Texture2D" uid="uid://b2vu7u7ca80a5" path="res://assets/GUI/CircleDummy.png" id="8_m2xrs"]
+[ext_resource type="Texture2D" uid="uid://5vuulx3spk0s" path="res://assets/GUI/Others/Cross@2x-1.png" id="9_4wt8i"]
+[ext_resource type="Texture2D" uid="uid://p3whurujqgp2" path="res://assets/GUI/Icon/Spark@4x.png" id="11_86ng7"]
+
+[sub_resource type="GDScript" id="GDScript_ikivb"]
+script/source = "extends CanvasLayer
+"
+
+[node name="TowerUpgradesUI" type="CanvasLayer"]
+script = SubResource("GDScript_ikivb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -596.0
+offset_right = -412.0
+offset_bottom = -396.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(6, 6)
+texture = ExtResource("2_txens")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 1576.0
+offset_top = 232.0
+offset_right = 1840.0
+offset_bottom = 872.0
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 50
+
+[node name="TorretaTiraChina2" parent="Panel/FlowContainer" instance=ExtResource("3_fjeav")]
+layout_mode = 2
+towerScene = ExtResource("4_b76t8")
+icon = ExtResource("5_l1sv3")
+
+[node name="Mejorar" type="TextureButton" parent="Panel/FlowContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+disabled = true
+action_mode = 0
+texture_normal = ExtResource("6_n01qj")
+
+[node name="Nivel" type="Label" parent="Panel/FlowContainer/Mejorar"]
+layout_mode = 2
+offset_top = 68.0
+offset_right = 140.0
+offset_bottom = 89.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_qfw2q")
+theme_override_font_sizes/font_size = 20
+text = "Nivel 1"
+
+[node name="Label" type="Label" parent="Panel/FlowContainer/Mejorar"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 20.0
+offset_right = 144.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("6_qfw2q")
+theme_override_font_sizes/font_size = 16
+text = "LVL UP"
+
+[node name="Daño" type="Label" parent="Panel/FlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_qfw2q")
+theme_override_font_sizes/font_size = 24
+text = "Daño: 	  100"
+
+[node name="Velocidad" type="Label" parent="Panel/FlowContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_qfw2q")
+theme_override_font_sizes/font_size = 24
+text = "Velocidad
+disparo:  9"
+autowrap_mode = 2
+
+[node name="Mejoras" parent="Panel/FlowContainer" instance=ExtResource("7_7noqp")]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -412.0
+offset_right = 48.0
+offset_bottom = -244.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("8_m2xrs")
+stretch_mode = 5
+
+[node name="Cross_2x-1" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(1842, 166)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_4wt8i")
+
+[node name="Spark_4x" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(1724, 278)
+scale = Vector2(0.0865387, 0.110294)
+texture = ExtResource("11_86ng7")
+
+[connection signal="pressed" from="Panel/FlowContainer/Mejorar" to="Panel/FlowContainer/TorretaTiraChina2" method="_on_mejorar_pressed"]

@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://ouf775u7wf4w"]
+
+[ext_resource type="Texture2D" uid="uid://ytd8yvqvqyf5" path="res://assets/WorldDecoration/Deco/05.png" id="1_qy6lg"]
+[ext_resource type="Texture2D" uid="uid://dc7q2kmi4kjol" path="res://assets/WorldDecoration/Deco/06.png" id="2_dhfkq"]
+[ext_resource type="Texture2D" uid="uid://dxxeiaq2ru4t2" path="res://assets/WorldDecoration/Deco/04.png" id="3_igl8m"]
+
+[node name="SegundasrocasJuntas" type="Node2D"]
+z_index = -1
+
+[node name="05" type="Sprite2D" parent="."]
+position = Vector2(40, -144)
+texture = ExtResource("1_qy6lg")
+
+[node name="07" type="Sprite2D" parent="."]
+position = Vector2(136, -48)
+texture = ExtResource("1_qy6lg")
+
+[node name="06" type="Sprite2D" parent="."]
+position = Vector2(104, -88)
+texture = ExtResource("2_dhfkq")
+
+[node name="08" type="Sprite2D" parent="."]
+position = Vector2(120, -72)
+texture = ExtResource("2_dhfkq")
+
+[node name="10" type="Sprite2D" parent="."]
+position = Vector2(56, -144)
+texture = ExtResource("2_dhfkq")
+
+[node name="11" type="Sprite2D" parent="."]
+position = Vector2(16, -144)
+texture = ExtResource("2_dhfkq")
+
+[node name="12" type="Sprite2D" parent="."]
+position = Vector2(120, -136)
+texture = ExtResource("1_qy6lg")
+
+[node name="04" type="Sprite2D" parent="."]
+position = Vector2(104, -152)
+texture = ExtResource("3_igl8m")
+
+[node name="13" type="Sprite2D" parent="."]
+position = Vector2(64, -168)
+texture = ExtResource("3_igl8m")
+
+[node name="14" type="Sprite2D" parent="."]
+position = Vector2(96, -112)
+texture = ExtResource("1_qy6lg")
+
+[node name="15" type="Sprite2D" parent="."]
+position = Vector2(160, -88)
+texture = ExtResource("3_igl8m")
+
+[node name="16" type="Sprite2D" parent="."]
+position = Vector2(160, -112)
+texture = ExtResource("3_igl8m")
+
+[node name="17" type="Sprite2D" parent="."]
+position = Vector2(104, -168)
+texture = ExtResource("1_qy6lg")
+
+[node name="18" type="Sprite2D" parent="."]
+position = Vector2(200, -120)
+texture = ExtResource("3_igl8m")
+
+[node name="19" type="Sprite2D" parent="."]
+position = Vector2(152, -160)
+texture = ExtResource("3_igl8m")
+
+[node name="20" type="Sprite2D" parent="."]
+position = Vector2(48, -200)
+texture = ExtResource("3_igl8m")
+
+[node name="21" type="Sprite2D" parent="."]
+position = Vector2(176, -56)
+texture = ExtResource("3_igl8m")
+
+[node name="22" type="Sprite2D" parent="."]
+position = Vector2(112, -56)
+texture = ExtResource("2_dhfkq")

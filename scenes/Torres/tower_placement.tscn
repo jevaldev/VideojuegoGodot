@@ -1,0 +1,120 @@
+[gd_scene load_steps=10 format=3 uid="uid://b20exm863hm14"]
+
+[ext_resource type="Script" path="res://scripts/ponerTorreta.gd" id="1_ce4tw"]
+[ext_resource type="Texture2D" uid="uid://cg4glsqc5m6a6" path="res://assets/GUI/Towers/Hover@2x-1.png" id="3_07rcc"]
+[ext_resource type="Texture2D" uid="uid://idyxm7klbhsm" path="res://assets/WorldDecoration/TX Village Props.png" id="3_ykrhy"]
+[ext_resource type="FontFile" uid="uid://c7d0sueupq4is" path="res://assets/prstart.ttf" id="4_tqiwf"]
+[ext_resource type="PackedScene" uid="uid://dx34u4xstguwl" path="res://scenes/GUI/tower_upgrades_ui.tscn" id="5_fm1us"]
+[ext_resource type="Texture2D" uid="uid://bak8r4y7j8dge" path="res://assets/GUI/DefaultDisplay.png" id="6_oboet"]
+[ext_resource type="Texture2D" uid="uid://p3whurujqgp2" path="res://assets/GUI/Icon/Spark@4x.png" id="6_qrdio"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpr8q"]
+size = Vector2(152, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4353"]
+atlas = ExtResource("3_ykrhy")
+region = Rect2(480, 18, 32, 46)
+
+[node name="TowerPlacement" type="Area2D"]
+top_level = true
+script = ExtResource("1_ce4tw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 8)
+shape = SubResource("RectangleShape2D_cpr8q")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -58.0
+offset_right = 97.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_07rcc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_b4353")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -21.0
+offset_top = -67.0
+offset_right = 21.0
+offset_bottom = -48.0
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_tqiwf")
+theme_override_font_sizes/font_size = 8
+text = "Place
+Tower"
+
+[node name="TowerUpgradesUI" parent="." instance=ExtResource("5_fm1us")]
+visible = false
+
+[node name="Mejorar" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="BotonMejora" type="TextureButton" parent="Mejorar"]
+z_index = 100
+offset_left = 1696.0
+offset_top = 253.0
+offset_right = 1840.0
+offset_bottom = 313.0
+texture_normal = ExtResource("6_oboet")
+
+[node name="Spark_4x" type="Sprite2D" parent="Mejorar"]
+z_index = 101
+position = Vector2(1724, 280)
+scale = Vector2(0.153846, 0.147059)
+texture = ExtResource("6_qrdio")
+
+[node name="Label" type="Label" parent="Mejorar"]
+z_index = 101
+offset_left = 1749.0
+offset_top = 298.0
+offset_right = 1800.0
+offset_bottom = 306.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_tqiwf")
+theme_override_font_sizes/font_size = 8
+text = "LVL UP"
+
+[node name="Label2" type="Label" parent="Mejorar"]
+z_index = 101
+offset_left = 1742.0
+offset_top = 270.0
+offset_right = 1838.0
+offset_bottom = 294.0
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_tqiwf")
+theme_override_font_sizes/font_size = 24
+text = "$600"
+
+[node name="Escasez" type="Label" parent="Mejorar"]
+visible = false
+z_index = 101
+offset_left = 1584.0
+offset_top = 344.0
+offset_right = 1840.0
+offset_bottom = 379.0
+theme_override_colors/font_color = Color(0.776471, 0.180392, 0.180392, 1)
+theme_override_fonts/font = ExtResource("4_tqiwf")
+theme_override_font_sizes/font_size = 16
+text = "No tienes dinero 
+suficiente"
+
+[connection signal="pressed" from="TowerUpgradesUI/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Mejorar/BotonMejora" to="." method="_on_boton_mejora_pressed"]
+
+[editable path="TowerUpgradesUI"]

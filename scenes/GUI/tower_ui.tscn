@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=3 uid="uid://yokdxhuasapq"]
+
+[ext_resource type="Texture2D" uid="uid://dfiar33xj0dmb" path="res://assets/GUI/Banners/Banner_Vertical.png" id="1_pqknc"]
+[ext_resource type="PackedScene" uid="uid://drvm4l47myjqf" path="res://scenes/Torres/Paneles/torreta_tira_china.tscn" id="1_uap12"]
+[ext_resource type="PackedScene" uid="uid://bd4thecmo2fa8" path="res://scenes/Torres/torreta_tirachinas.tscn" id="3_ej2mu"]
+[ext_resource type="Texture2D" uid="uid://dcokpw5njbysb" path="res://assets/Towers bases/Tower 03 Lvl1.png" id="3_q1v2h"]
+[ext_resource type="PackedScene" uid="uid://dq6f650icuy10" path="res://scenes/Torres/torreta_catapulta.tscn" id="4_n34i3"]
+[ext_resource type="Texture2D" uid="uid://1kuql5fn1xga" path="res://assets/Towers bases/Tower 04 Lvl1.png" id="5_dj4vk"]
+[ext_resource type="Texture2D" uid="uid://b2vu7u7ca80a5" path="res://assets/GUI/CircleDummy.png" id="7_3smf8"]
+[ext_resource type="Texture2D" uid="uid://5vuulx3spk0s" path="res://assets/GUI/Others/Cross@2x-1.png" id="8_17xcw"]
+
+[node name="TowerUI" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -596.0
+offset_right = -412.0
+offset_bottom = -396.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(6, 6)
+texture = ExtResource("1_pqknc")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 1594.0
+offset_top = 216.0
+offset_right = 1818.0
+offset_bottom = 792.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/v_separation = 20
+alignment = 1
+last_wrap_alignment = 1
+
+[node name="TorretaTiraChina2" parent="Panel/FlowContainer" instance=ExtResource("1_uap12")]
+layout_mode = 2
+towerScene = ExtResource("3_ej2mu")
+icon = ExtResource("3_q1v2h")
+
+[node name="TorretaTiraChina" parent="Panel/FlowContainer" instance=ExtResource("1_uap12")]
+layout_mode = 2
+towerScene = ExtResource("4_n34i3")
+icon = ExtResource("5_dj4vk")
+cost = 1200
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -412.0
+offset_right = 48.0
+offset_bottom = -244.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_3smf8")
+stretch_mode = 5
+
+[node name="Cross_2x-1" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(1842, 166)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_17xcw")
+
+[connection signal="pressed" from="TextureButton" to="Panel/FlowContainer/TorretaTiraChina2" method="_on_texture_button_pressed"]

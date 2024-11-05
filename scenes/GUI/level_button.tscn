@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsp04ituyi14r"]
+
+[ext_resource type="Texture2D" uid="uid://c4rnww5cs5upt" path="res://assets/GUI/Level/Button/WithStars@4x.png" id="1_usa4l"]
+[ext_resource type="Script" path="res://scripts/level_button.gd" id="2_ah0ye"]
+[ext_resource type="FontFile" uid="uid://c7d0sueupq4is" path="res://assets/prstart.ttf" id="3_4bgga"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wc2ox"]
+load_path = "res://.godot/imported/Locked@4x.png-f9a5b733888fbf71b05de5f5f11de90a.ctex"
+
+[node name="LevelButton" type="TextureButton"]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = ExtResource("1_usa4l")
+texture_disabled = SubResource("CompressedTexture2D_wc2ox")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("2_ah0ye")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -15.0
+offset_right = 8.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.956863, 0.254902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4bgga")
+text = "1"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

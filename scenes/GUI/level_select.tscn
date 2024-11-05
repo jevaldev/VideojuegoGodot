@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjpo6362vmfsl"]
+
+[ext_resource type="Script" path="res://level_select.gd" id="1_jqlw4"]
+[ext_resource type="Texture2D" uid="uid://b5uvdh0aq73ud" path="res://assets/GUI/Others/Shadow.png" id="2_kq2kn"]
+[ext_resource type="Texture2D" uid="uid://jy04res8lohb" path="res://assets/GUI/Level/inventorySlot1.png" id="3_2ofjm"]
+[ext_resource type="Texture2D" uid="uid://ptq81j7bqkbm" path="res://assets/GUI/Level/Back.png" id="4_jaobc"]
+[ext_resource type="Texture2D" uid="uid://dmrbi1fjmwg1a" path="res://assets/GUI/Level/NameBack.png" id="5_4au0u"]
+[ext_resource type="FontFile" uid="uid://c7d0sueupq4is" path="res://assets/prstart.ttf" id="6_urf1i"]
+[ext_resource type="PackedScene" uid="uid://bsp04ituyi14r" path="res://scenes/GUI/level_button.tscn" id="7_1smfq"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jqlw4")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_kq2kn")
+expand_mode = 1
+
+[node name="LevelMenu" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -266.0
+offset_right = 300.0
+offset_bottom = 266.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_2ofjm")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="LevelMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.5
+offset_right = 320.5
+offset_bottom = 231.0
+grow_horizontal = 2
+texture = ExtResource("4_jaobc")
+
+[node name="TextureRect2" type="TextureRect" parent="LevelMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -209.5
+offset_top = 29.0
+offset_right = 209.5
+offset_bottom = 170.0
+grow_horizontal = 2
+texture = ExtResource("5_4au0u")
+
+[node name="Label" type="Label" parent="LevelMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 82.0
+offset_right = 80.0
+offset_bottom = 114.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.956863, 0.254902, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_urf1i")
+theme_override_font_sizes/font_size = 32
+text = "Juego"
+
+[node name="ClipControl" type="Control" parent="LevelMenu"]
+layout_mode = 1
+anchor_left = 0.087
+anchor_top = 0.425
+anchor_right = 0.913
+anchor_bottom = 0.891
+offset_left = -0.200005
+offset_top = -0.100006
+offset_right = 0.199951
+offset_bottom = -0.0120239
+
+[node name="GridContainer" type="GridContainer" parent="LevelMenu/ClipControl"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 20
+columns = 5
+
+[node name="LevelButton" parent="LevelMenu/ClipControl/GridContainer" instance=ExtResource("7_1smfq")]
+layout_mode = 2
+
+[node name="LevelButton2" parent="LevelMenu/ClipControl/GridContainer" instance=ExtResource("7_1smfq")]
+layout_mode = 2
+
+[node name="LevelButton3" parent="LevelMenu/ClipControl/GridContainer" instance=ExtResource("7_1smfq")]
+layout_mode = 2
+
+[node name="LevelButton4" parent="LevelMenu/ClipControl/GridContainer" instance=ExtResource("7_1smfq")]
+layout_mode = 2
+
+[node name="LevelButton5" parent="LevelMenu/ClipControl/GridContainer" instance=ExtResource("7_1smfq")]
+layout_mode = 2
