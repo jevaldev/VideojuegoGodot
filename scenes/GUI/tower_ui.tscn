@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://yokdxhuasapq"]
+[gd_scene load_steps=14 format=3 uid="uid://yokdxhuasapq"]
 
 [ext_resource type="Texture2D" uid="uid://dfiar33xj0dmb" path="res://assets/GUI/Banners/Banner_Vertical.png" id="1_pqknc"]
 [ext_resource type="PackedScene" uid="uid://drvm4l47myjqf" path="res://scenes/Torres/Paneles/torreta_tira_china.tscn" id="1_uap12"]
@@ -7,7 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://dq6f650icuy10" path="res://scenes/Torres/torreta_catapulta.tscn" id="4_n34i3"]
 [ext_resource type="Texture2D" uid="uid://1kuql5fn1xga" path="res://assets/Towers bases/Tower 04 Lvl1.png" id="5_dj4vk"]
 [ext_resource type="Texture2D" uid="uid://b2vu7u7ca80a5" path="res://assets/GUI/CircleDummy.png" id="7_3smf8"]
+[ext_resource type="PackedScene" uid="uid://b47qs3qkg477p" path="res://scenes/Torres/torreta_ballesta.tscn" id="7_xb6d2"]
 [ext_resource type="Texture2D" uid="uid://5vuulx3spk0s" path="res://assets/GUI/Others/Cross@2x-1.png" id="8_17xcw"]
+[ext_resource type="Texture2D" uid="uid://fumcvnaddx4p" path="res://assets/Towers bases/Tower 01 Lvl1.png" id="8_j3gdg"]
+[ext_resource type="FontFile" uid="uid://c7d0sueupq4is" path="res://assets/prstart.ttf" id="11_nrrcf"]
+[ext_resource type="Texture2D" uid="uid://bak8r4y7j8dge" path="res://assets/GUI/DefaultDisplay.png" id="12_xndab"]
+[ext_resource type="Texture2D" uid="uid://bg01hjsk4il5m" path="res://assets/GUI/Money.png" id="13_3obgk"]
 
 [node name="TowerUI" type="CanvasLayer"]
 
@@ -58,12 +63,19 @@ last_wrap_alignment = 1
 layout_mode = 2
 towerScene = ExtResource("3_ej2mu")
 icon = ExtResource("3_q1v2h")
+cost = 1400
 
 [node name="TorretaTiraChina" parent="Panel/FlowContainer" instance=ExtResource("1_uap12")]
 layout_mode = 2
 towerScene = ExtResource("4_n34i3")
 icon = ExtResource("5_dj4vk")
-cost = 1200
+cost = 1600
+
+[node name="TorretaTiraChina3" parent="Panel/FlowContainer" instance=ExtResource("1_uap12")]
+layout_mode = 2
+towerScene = ExtResource("7_xb6d2")
+icon = ExtResource("8_j3gdg")
+cost = 1000
 
 [node name="TextureButton" type="TextureButton" parent="."]
 anchors_preset = 6
@@ -86,5 +98,28 @@ z_index = 10
 position = Vector2(1842, 166)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_17xcw")
+
+[node name="Monedas" type="Label" parent="."]
+unique_name_in_owner = true
+z_index = 10
+offset_left = 1670.0
+offset_top = 821.0
+offset_right = 1766.0
+offset_bottom = 872.0
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_nrrcf")
+theme_override_font_sizes/font_size = 24
+text = "1000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DefaultDisplay2" type="Sprite2D" parent="."]
+position = Vector2(1696, 846)
+texture = ExtResource("12_xndab")
+
+[node name="Money" type="Sprite2D" parent="."]
+position = Vector2(1652, 844)
+texture = ExtResource("13_3obgk")
 
 [connection signal="pressed" from="TextureButton" to="Panel/FlowContainer/TorretaTiraChina2" method="_on_texture_button_pressed"]

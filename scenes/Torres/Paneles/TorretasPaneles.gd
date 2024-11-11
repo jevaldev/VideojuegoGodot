@@ -9,7 +9,7 @@ extends Panel
 @onready var tower_ui = get_tree().get_root().get_node("Game/TowerUI")
 @onready var texture_rect: TextureRect = $TorretaSprite
 @onready var main_node = get_tree().root.get_node("Game")
-@onready var label = main_node.get_node("CanvasLayer/Labels/Monedas")
+@onready var label = main_node.get_node("TowerUI/Monedas")
 @onready var labelInterno: Label = $Label
 
 

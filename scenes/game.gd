@@ -3,7 +3,7 @@ extends Node2D
 @onready var ronda_1_5: Timer = $"Rondas/Ronda 1-5"
 @onready var texture_progress_bar: TextureProgressBar = $CanvasLayer/TextureProgressBar
 @onready var vida: Label = $CanvasLayer/Labels/Vida
-@onready var monedas: Label = $CanvasLayer/Labels/Monedas
+@onready var monedas: Label = get_node("TowerUI/Monedas")
 @onready var label: Label = $CanvasLayer/Labels/Label
 
 var player_health = 100

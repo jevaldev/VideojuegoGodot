@@ -11,6 +11,7 @@
 # Ignore exported builds
 /builds/
 /bin/
+.vscode
 /export/
 
 # Godot Editor Configuration

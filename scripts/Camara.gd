@@ -12,7 +12,8 @@ func _physics_process(delta: float) -> void:
 
 	# Detenemos el procesamiento de la física si el zoom ha alcanzado el valor objetivo
 	set_physics_process(not is_equal_approx(zoom.x, _target_zoom))
-	
+
+# Función para controlar los botones del mouse
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		if event.button_mask == MOUSE_BUTTON_MASK_RIGHT:

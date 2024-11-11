@@ -107,7 +107,7 @@ armaAnimada = NodePath("Sprite2D/AnimatedSprite2D")
 aim = NodePath("Sprite2D/AnimatedSprite2D/Marker2D")
 numeroFrame = 5
 lastFrame = 7
-bulletDMG = 9
+bulletDMG = 11
 fps_increment = 0.75
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

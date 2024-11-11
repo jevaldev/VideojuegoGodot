@@ -1,18 +1,19 @@
 extends CharacterBody2D
 
+# Variables independientes para cada uno de los enemigos
 @export var animacion: AnimatedSprite2D
 @export var speed: float = 100
 @export var health: int = 10
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var main_node = get_tree().root.get_node("Game")
-@onready var label = main_node.get_node("CanvasLayer/Labels/Monedas")
+@onready var label = main_node.get_node("TowerUI/Monedas")
 @onready var vida = main_node.get_node("CanvasLayer/Labels/Vida")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # Emitir la señal con el tipo de enemigo como parámetro
 func _process(delta: float) -> void:
-	get_parent().set_progress(get_parent().get_progress()+ speed * delta )
+	get_parent().set_progress(get_parent().get_progress() + speed * delta)
 	if get_parent().get_progress_ratio() == 1:
 		if health > 30:
 			main_node.player_health -= 5
@@ -29,24 +30,24 @@ func _process(delta: float) -> void:
 # Función que maneja el daño recibido y la animación
 func apply_damage(damage: int) -> void:
 	health -= damage
-	if health > 0: 
-		play_hurt()  
+	if health > 0:
+		play_hurt()
 	else:
 		collision_layer = 8
 		speed = 0
 		animacion.play("muerte")
-		main_node.coins += randi_range(80, 120)  # Actualizamos el valor de 'coins' en el nodo "Game"
+		main_node.coins += randi_range(80, 120) # Actualizamos el valor de monedas
 		label.text = str(main_node.coins)
 		await animacion.animation_finished
 		get_parent().get_parent().queue_free()
 		
-		
+# Función para reproducir la animación de recibir daño		
 func play_hurt() -> void:
-	if health > 0: 
-		if animacion:  
+	if health > 0:
+		if animacion:
 			animacion.play("hurt")
 			await animacion.animation_finished
-			animacion.play("walk")  
+			animacion.play("walk")
 		else:
 			print("AnimatedSprite2D no encontrado")
 	else:
