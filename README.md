@@ -10,11 +10,12 @@ Este proyecto fue realizado para una materia de mi universidad. El proposito de 
 
 ## Herramientas usadas
 
--**Motor de juego**: Godot 4.3. -**Lenguaje de programación**: GDScript
+- **Motor de juego**: Godot 4.3.
+- **Lenguaje de programación**: GDScript
 
 ## Caracteristicas del videojuego
 
--Variedad de torretas para seleccionar.
--Las torretas siempre van a ir fijas en un punto.
--El juego avanza a través de oleadas.
--Mejoras individuales para cada torreta.
+- Variedad de torretas para seleccionar.
+- Las torretas siempre van a ir fijas en un punto.
+- El juego avanza a través de oleadas.
+- Mejoras individuales para cada torreta.
